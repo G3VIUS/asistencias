@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear Usuario - Admin</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background: #eef4fb;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background: #343a40;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 500px;
+      text-align: center;
+    }
+    .card h2 {
+      margin-bottom: 20px;
+      color: #007BFF;
+    }
+    .card form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .card input[type="text"],
+    .card input[type="email"],
+    .card input[type="password"],
+    .card select,
+    .card button {
+      font-size: 14px;
+    }
+    .card input[type="text"],
+    .card input[type="email"],
+    .card input[type="password"],
+    .card select {
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .card button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .card button:hover {
+      background: #0056b3;
+    }
+    .volver {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .volver .panel-btn {
+      background: #6c757d;
+    }
+    .volver .panel-btn:hover {
+      background: #5a6268;
+    }
+    footer {
+      background: #343a40;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Crear Nuevo Usuario</h1>
+  </header>
+  <main>
+    <section class="card">
+      <h2><i class="fas fa-user-plus"></i> Nuevo Usuario</h2>
+      <form action="crear_usuario.php" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="correo" placeholder="Correo electrónico" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <input type="text" name="codigo_profesor" placeholder="Código institucional (opcional)">
+        <div style="text-align:left;">
+          <label for="tipo" style="margin-bottom:5px; display:block;">Tipo de usuario:</label>
+          <select name="tipo" id="tipo" required>
+            <option value="profesor">Profesor</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <button type="submit"><i class="fas fa-save"></i> Crear Usuario</button>
+      </form>
+      <div class="volver">
+        <a href="panel_admin.php" class="panel-btn"><i class="fas fa-arrow-left"></i> Volver al Panel</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Mi Aplicación Web
+  </footer>
+</body>
+</html>

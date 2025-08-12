@@ -1,0 +1,22 @@
+(
+echo # Archivos a ignorar
+echo *.log
+echo *.tmp
+echo
+echo # PHP (por si luego usas Composer o variables de entorno)
+echo vendor/
+echo .env
+echo .env.*
+echo config.php
+echo
+echo # Carp. comunes que no quieres subir
+echo cache/
+echo sessions/
+echo uploads/
+echo
+echo # IDE / SO
+echo .vscode/
+echo .idea/
+echo .DS_Store
+echo Thumbs.db
+) > .gitignore
